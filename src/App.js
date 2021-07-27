@@ -4,6 +4,7 @@ import MovieList from './components/MovieList';
 import './App.css';
 import data from './data';
 import SearchBar from './components/SearchBar';
+import AddMovie from './components/AddMovie';
 
 function App() {
   const movies = data;
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <SearchBar />
       <MovieList movies={ movies } />
+      <AddMovie />
     </div>
   );
 }
