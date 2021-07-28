@@ -13,9 +13,9 @@ class GenderInput extends React.Component {
           value={ value }
           onChange={ handleChange }
         >
-          <option data-testid="select-option" value="action">Ação</option>
-          <option data-testid="select-option" value="comedy">Comédia</option>
-          <option data-testid="select-option" value="thriler">Suspense</option>
+          <option data-testid="genre-option" value="action">Ação</option>
+          <option data-testid="genre-option" value="comedy">Comédia</option>
+          <option data-testid="genre-option" value="thriller">Suspense</option>
         </select>
       </label>
     );
@@ -24,7 +24,7 @@ class GenderInput extends React.Component {
 
 GenderInput.propTypes = {
   value: PropTypes.string.isRequired,
-  handleChange: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default GenderInput;

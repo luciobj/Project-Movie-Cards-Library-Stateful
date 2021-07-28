@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import TitleInput from './Inputs/TitleInput';
 import SubtitleInput from './Inputs/SubtitleInput';
 import ImageInput from './Inputs/ImageInput';
@@ -12,7 +13,7 @@ class AddMovie extends React.Component {
     super();
 
     this.handleChange = this.handleChange.bind(this);
-    this.submit = this.submit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
 
     this.state = {
       title: '',
@@ -24,13 +25,14 @@ class AddMovie extends React.Component {
     };
   }
 
-  handleChange(event) {
+  handleChange({ target }) {
+    const value = (target.type === 'checkbox') ? target.checked : target.value;
     this.setState({
-      [event.name]: event.target.value,
+      [target.name]: value,
     });
   }
 
-  submit() {
+  handleClick() {
     const { onClick } = this.props;
     onClick(this.state);
     this.setState({
@@ -56,7 +58,7 @@ class AddMovie extends React.Component {
         <button
           type="submit"
           data-testid="send-button"
-          onClick={ this.submit }
+          onClick={ this.handleClick }
         >
           Adicionar filme
         </button>
@@ -66,7 +68,7 @@ class AddMovie extends React.Component {
 }
 
 AddMovie.propTypes = {
-  onClick: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default AddMovie;

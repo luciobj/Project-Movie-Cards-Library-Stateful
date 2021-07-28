@@ -6,7 +6,7 @@ class ImageInput extends React.Component {
     const { value, handleChange } = this.props;
     return (
       <label data-testid="image-input-label" htmlFor="imagePath">
-        Caminho da imagem
+        Imagem
         <input
           data-testid="image-input"
           name="imagePath"
@@ -20,7 +20,7 @@ class ImageInput extends React.Component {
 
 ImageInput.propTypes = {
   value: PropTypes.string.isRequired,
-  handleChange: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default ImageInput;

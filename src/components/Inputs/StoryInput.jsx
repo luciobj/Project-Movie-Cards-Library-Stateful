@@ -20,7 +20,7 @@ class StoryInput extends React.Component {
 
 StoryInput.propTypes = {
   value: PropTypes.string.isRequired,
-  handleChange: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default StoryInput;

@@ -5,13 +5,14 @@ class RatingInput extends React.Component {
   render() {
     const { value, handleChange } = this.props;
     return (
-      <label data-testid="genre-input-label" htmlFor="rating">
+      <label data-testid="rating-input-label" htmlFor="rating">
         Avaliação
         <input
-          data-testid="genre-input"
+          data-testid="rating-input"
           name="rating"
           value={ value }
           onChange={ handleChange }
+          type="number"
         />
       </label>
     );
@@ -19,8 +20,8 @@ class RatingInput extends React.Component {
 }
 
 RatingInput.propTypes = {
-  value: PropTypes.string.isRequired,
-  handleChange: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default RatingInput;
