@@ -67,10 +67,7 @@ class MovieLibrary extends React.Component {
 
   onSelectedGenreChange({ target }) {
     this.setState({ selectedGenre: target.value });
-    console.log(target.value);
     const { movies } = this.props;
-    const { selectedGenre } = this.state;
-    console.log(selectedGenre);
     if (target.value === '') {
       this.setState({ movies });
     } else {
@@ -87,9 +84,12 @@ class MovieLibrary extends React.Component {
   }
 
   onClick(movie) {
-    const { movies } = this.props;
-    movies.push(movie);
-    this.setState({ movies });
+    const { movies } = this.state;
+    const newList = [
+      ...movies,
+      movie,
+    ];
+    this.setState({ movies: newList });
   }
 
   render() {
