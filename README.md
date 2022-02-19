@@ -1,9 +1,7 @@
-# Welcome to the Recipe APP
-
+# Welcome to the Movie Cards Library Stateful
 ## Context
 
 This project was made as a work assignment in during the Trybe web developer course.
-
 
 The goal was to create a filter for the film list, using the components life cycle knowlegde and states. This same list was developed in another CRUD project, and this one adds the filter possibilities.
 
